@@ -15,14 +15,14 @@
 			<div class="col s12">
 				<h2 class="center">Crear pagina! <small> <br> Creador de paginas[ Beta ]</h2>
 			</div>
-		    <form class="col s12">
+		    <form action="websiteCreator.php" method="POST" class="col s12">
 		      <div class="row">
 		        <div class="input-field col s6">
-		          <input name="nombreWebsite" id="nombreWebsite" type="text" class="validate">
-		          <label for="nombreWebsite">Nombre del Webiste (El nombre de la carpeta que pegaran en site)</label>
+		          <input name="fileName" id="fileName" type="text" class="validate">
+		          <label for="fileName">Nombre del Webiste (El nombre de la carpeta que pegaran en site)</label>
 		        </div>
 		        <div class="input-field col s6">
-				  <select class="browser-default">
+				  <select class="browser-default" name="template">
 				    <option value="" disabled selected>Elige un tema</option>
 				    <option value="1">Stability</option>
 				  </select>
@@ -62,8 +62,8 @@
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
-		          <input name="nombreEmpresa" id="nombreEmpresa" type="text" class="validate">
-		          <label for="nombreEmpresa">Nombre de la empresa</label>
+		          <input name="companyName" id="companyName" type="text" class="validate">
+		          <label for="companyName">Nombre de la empresa</label>
 		        </div>
 		        <div class="input-field col s6">
 		          <input name="direccionEmpresa" id="direccionEmpresa" type="text" class="validate">
@@ -72,28 +72,28 @@
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
-		          <input name="emailEmpresa" id="emailEmpresa" type="text" class="validate">
-		          <label for="emailEmpresa">Correo de la Empresa</label>
+		          <input name="companyEmail" id="companyEmail" type="text" class="validate">
+		          <label for="companyEmail">Correo de la Empresa</label>
 		        </div>
 		        <div class="input-field col s6">
-		          <input name="emailEmpresa2" id="emailEmpresa2" type="text" class="validate">
-		          <label for="emailEmpresa2">Correo de la Empresa 2</label>
-		        </div>
-		      </div>
-		      <div class="row">
-		        <div class="input-field col s6">
-		          <input name="phone" id="phone" type="text" class="validate">
-		          <label for="phone">Telefono</label>
-		        </div>
-		        <div class="input-field col s6">
-		          <input name="phone2" id="phone2" type="text" class="validate">
-		          <label for="phone2">Telefono 2</label>
+		          <input name="companyEmail2" id="companyEmail2" type="text" class="validate">
+		          <label for="companyEmail2">Correo de la Empresa 2</label>
 		        </div>
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
-		          <input name="dominio" id="dominio" type="text" class="validate">
-		          <label for="dominio">Dominio</label>
+		          <input name="companyPhone" id="companyPhone" type="text" class="validate">
+		          <label for="companyPhone">Telefono</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input name="companyPhone2" id="companyPhone2" type="text" class="validate">
+		          <label for="companyPhone2">Telefono 2</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s6">
+		          <input name="domain" id="domain" type="text" class="validate">
+		          <label for="domain">Dominio</label>
 		        </div>
 		        <div class="input-field col s6">
 		          <input name="servicesPhrease" id="servicesPhrease" type="text" class="validate">
