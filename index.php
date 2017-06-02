@@ -7,7 +7,14 @@
 	<title>Website Creator</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-
+<style>
+/* Se agregaron estas clases en la parte de los Logos y Favicon, Kike agrega estas clases a la Hoja de Estilo */
+.no-opacity{opacity:1 !important; position:relative !important;}
+.inline-display{display:inline !important;}
+.inline-display label{position:relative; left: 0 !important;}
+.inline-display input{margin-top:20px !important;}
+/**************************************************************************************************************/
+</style>
 </head>
 <body>
 	<div class="container">
@@ -15,7 +22,7 @@
 			<div class="col s12">
 				<h2 class="center">Crear pagina! <small> <br> Creador de paginas[ Beta ]</h2>
 			</div>
-		    <form action="websiteCreator.php" method="POST" class="col s12">
+		    <form action="websiteCreator.php" method="POST" class="col s12" enctype="multipart/form-data">
 		      <div class="row">
 		        <div class="input-field col s6">
 		          <input name="fileName" id="fileName" type="text" class="validate">
@@ -275,30 +282,33 @@
 		      <!-- OPCIONES QUE CORRESPONDEN A YASSER -->
 			  <div class="row">
 			      <div class="file-field input-field col s4">
-				      <div class="btn">
+				      <!--<div class="btn">
 				        <span>Upload Logo</span>
 				        <input type="file">
-				      </div>
-				      <div class="file-path-wrapper">
-				        <input class="file-path validate" type="text">
+				      </div>-->
+				      <div class="file-path-wrapper inline-display">
+								<label>Logo:</label><br>
+				        <input class="btn file-path validate no-opacity" type="file" name="logo-upload" placeholder="Seleccionar Logo">
 				      </div>
 			  	 </div>
 			      <div class="file-field input-field col s4">
-				      <div class="btn">
+				      <!--<div class="btn">
 				        <span>Upload Logo footer</span>
 				        <input type="file">
-				      </div>
-				      <div class="file-path-wrapper">
-				        <input class="file-path validate" type="text">
+				      </div>-->
+				      <div class="file-path-wrapper inline-display">
+				        <label>Logo Footer:</label><br>
+								<input class="btn file-path validate no-opacity" type="file" name="logo-footer-upload" placeholder="Seleccionar Logo Footer">
 				      </div>
 			  	 </div>
 			      <div class="file-field input-field col s4">
-				      <div class="btn">
+				      <!--<div class="btn">
 				        <span>Favicon</span>
 				        <input type="file">
-				      </div>
-				      <div class="file-path-wrapper">
-				        <input class="file-path validate" type="text">
+				      </div>-->
+				      <div class="file-path-wrapper inline-display">
+								<label>Favicon:</label><br>
+				        <input class="btn file-path validate no-opacity" type="file" name="favicon-upload" placeholder="Seleccionar Favicon">
 				      </div>
 			  	 </div>
 			  </div>
@@ -306,6 +316,7 @@
 			  <div class="row">
 				<div class="input-field col s12">
 					<input type="submit" value="Crear Pagina" class="waves-effect waves-light btn">
+					<input name="action" type="hidden" value="Subir" /> 
 				</div>
 			  </div>
 

@@ -22,7 +22,6 @@
 	<meta name="author" content="http://www.eliteonlinemedia.com/">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
 	<?php include 'php/css_minified.php' ?>
-
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="vendor/respond.min.js"></script>
@@ -31,8 +30,7 @@
 	<!--[if IE]>
 		<link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
-
-	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="icon" type="image/png" href="images/favicon.png"/>
 	<?php include 'php/seo_home.php';?>
 	<script type="text/javascript">
 	   onload=function() {

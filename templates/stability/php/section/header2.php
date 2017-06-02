@@ -43,8 +43,6 @@
 	<link rel="stylesheet" href="css/custom.css">
 
 	<script src="vendor/modernizr.js"></script>
-
-
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="vendor/respond.min.js"></script>
@@ -53,8 +51,7 @@
 	<!--[if IE]>
 		<link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
-
-	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="icon" type="image/png" href="images/favicon.png"/>
 	<?php include 'php/seo_home.php';?>
 	
 </head>
