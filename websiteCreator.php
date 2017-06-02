@@ -4,6 +4,8 @@ require_once('function.php');
 //$getfull_name = $_SERVER['PHP_SELF'];$name_array = explode('/',$full_name);$count = count($name_array);$page_name = $name_array[$count-1];
 //Template que se va utilizar
 $template = $_POST['template'];
+	
+
 //Funcion para crear la carpeta del website creado, comprimirlo en un zip, descargalo, y eliminar el directorio temporal y el zip
 function write_info($template){
 	//si no se selecciono un tema indicar que la variable esta vacia
@@ -86,6 +88,48 @@ function write_info($template){
 		$getColor1 = isset($_POST['color1']) ? $_POST['color1'] : '';
 		$getColor2 = isset($_POST['color2']) ? $_POST['color2'] : '';
 		$getColor3 = isset($_POST['color3']) ? $_POST['color3'] : '';
+
+		/**** Inicio de la Funcion de los Logos y Favicon ****/
+			$ruta="download/$template/img/"; //Carpeta en la que subiremos los Logos
+			$logo_footer="logo-upload";
+			$logo_footer="logo-footer-upload";
+			$logo_footer="favicon-upload";
+			$uploadfile_temporal=$_FILES['logo-upload']['tmp_name']; 
+			$uploadfile_nombre=$ruta.$_FILES['logo-upload']['name'];
+			$nombrelogo="logo";
+			$uploadfooter_temporal=$_FILES['logo-footer-upload']['tmp_name']; 
+			$uploadfooter_nombre=$ruta.$_FILES['logo-footer-upload']['name'];
+			$nombrelogo_footer="logo-footer";
+			$uploadfavicon_temporal=$_FILES['favicon-upload']['tmp_name']; 
+			$uploadfavicon_nombre=$ruta.$_FILES['favicon-upload']['name'];
+			$nombrelogo="favicon";
+			if (is_uploaded_file($uploadfile_temporal))
+			{ 
+				if($template=="stability"){move_uploaded_file($uploadfile_temporal, 'download/'.$template.'/images/logo.png');}/*
+				elseif($template=="dart"){move_uploaded_file($uploadfile_temporal, 'download/'.$template.'/images/logo.png');}
+				elseif($template=="prikitiw"){move_uploaded_file($uploadfile_temporal, 'download/'.$template.'/img/logo.png');}
+				elseif($template=="solarise"){move_uploaded_file($uploadfile_temporal, 'download/'.$template.'/img/logo.png');}*/
+				
+				if (is_uploaded_file($uploadfooter_temporal))
+					{ 
+						if($template=="stability"){move_uploaded_file($uploadfooter_temporal, 'download/'.$template.'/images/logo-footer.png');}/*
+						elseif($template=="dart"){move_uploaded_file($uploadfooter_temporal, 'download/'.$template.'/images/logo-footer.png');}
+						elseif($template=="prikitiw"){move_uploaded_file($uploadfooter_temporal, 'download/'.$template.'/img/logo-footer.png');}
+						elseif($template=="solarise"){move_uploaded_file($uploadfooter_temporal, 'download/'.$template.'/img/logo-footer.png');}*/
+
+						if (is_uploaded_file($uploadfavicon_temporal))
+							{ 
+								if($template=="stability"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$template.'/images/favicon.png');}/*
+								elseif($template=="dart"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$template.'/images/favicon.png');}
+								elseif($template=="prikitiw"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$template.'/img/favicon.png');}
+								elseif($template=="solarise"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$template.'/img/favicon.png');}*/
+							}
+					}
+			}
+			else { echo "Error al Subir el Archivo"; } 
+			
+		/**** Fin de la Funcion de los Logos y Favicon ****/
+
 		/**************************************************
 		*var_export() obtiene información estructurada sobre la variable dada. 
 		*Es similar a la función var_dump() con una excepción: 
