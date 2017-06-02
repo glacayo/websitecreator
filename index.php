@@ -24,12 +24,13 @@
 		        <div class="input-field col s6">
 				  <select class="browser-default" name="template">
 				    <option value="" disabled selected>Elige un tema</option>
-				    <option value="1">Stability</option>
+				    <option value="stability">Stability</option>
 				  </select>
 				  </div>
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
+		        	<!-- OPCIONES QUE LE CORRESPONDEN HA NELSON -->
 		        	<h6>Imagenes que contiene la pagina?</h6>
 				    <p>
 				      <input type="checkbox" name="landscaping" id="landscaping" />
@@ -58,36 +59,37 @@
 				      <input name="radioGroup" type="radio" id="radioRoofing" />
 				      <label for="radioRoofing">Roofing</label>
 				    </p>
+				    <!-- END OPCIONES QUE LE CORRESPONDEN HA NELSON -->
 		        </div>
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
-		          <input name="companyName" id="companyName" type="text" class="validate">
-		          <label for="companyName">Nombre de la empresa</label>
+		          <input name="nameCompany" id="nameCompany" type="text" class="validate">
+		          <label for="nameCompany">Nombre de la empresa</label>
 		        </div>
 		        <div class="input-field col s6">
-		          <input name="direccionEmpresa" id="direccionEmpresa" type="text" class="validate">
-		          <label for="direccionEmpresa">Direccion de la empresa</label>
-		        </div>
-		      </div>
-		      <div class="row">
-		        <div class="input-field col s6">
-		          <input name="companyEmail" id="companyEmail" type="text" class="validate">
-		          <label for="companyEmail">Correo de la Empresa</label>
-		        </div>
-		        <div class="input-field col s6">
-		          <input name="companyEmail2" id="companyEmail2" type="text" class="validate">
-		          <label for="companyEmail2">Correo de la Empresa 2</label>
+		          <input name="address" id="address" type="text" class="validate">
+		          <label for="address">Direccion de la empresa</label>
 		        </div>
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
-		          <input name="companyPhone" id="companyPhone" type="text" class="validate">
-		          <label for="companyPhone">Telefono</label>
+		          <input name="email" id="email" type="text" class="validate">
+		          <label for="email">Correo de la Empresa</label>
 		        </div>
 		        <div class="input-field col s6">
-		          <input name="companyPhone2" id="companyPhone2" type="text" class="validate">
-		          <label for="companyPhone2">Telefono 2</label>
+		          <input name="email2" id="email2" type="text" class="validate">
+		          <label for="email2">Correo de la Empresa 2</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s6">
+		          <input name="phone" id="phone" type="text" class="validate">
+		          <label for="phone">Telefono</label>
+		        </div>
+		        <div class="input-field col s6">
+		          <input name="phone2" id="phone2" type="text" class="validate">
+		          <label for="phone2">Telefono 2</label>
 		        </div>
 		      </div>
 		      <div class="row">
@@ -96,14 +98,14 @@
 		          <label for="domain">Dominio</label>
 		        </div>
 		        <div class="input-field col s6">
-		          <input name="servicesPhrease" id="servicesPhrease" type="text" class="validate">
-		          <label for="servicesPhrease">Services Phrase</label>
+		          <input name="phraseServices" id="phraseServices" type="text" class="validate">
+		          <label for="phraseServices">Services Phrase</label>
 		        </div>
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
-		          <input name="paymentMethod" id="paymentMethod" type="text" class="validate">
-		          <label for="paymentMethod">Payment Method</label>
+		          <input name="payment" id="payment" type="text" class="validate">
+		          <label for="payment">Payment Method</label>
 		        </div>
 		        <div class="input-field col s6">
 		          <input name="experience" id="experience" type="text" class="validate">
@@ -122,12 +124,12 @@
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
-		          <input name="estimate" id="estimate" type="text" class="validate">
-		          <label for="estimate">Estimate</label>
+		          <input name="estimates" id="estimates" type="text" class="validate">
+		          <label for="estimates">Estimate</label>
 		        </div>
 		        <div class="input-field col s6">
-		          <input name="cover" id="cover" type="text" class="validate">
-		          <label for="cover">Cover</label>
+		          <input name="coverArea" id="coverArea" type="text" class="validate">
+		          <label for="coverArea">Cover</label>
 		        </div>
 		      </div>
 		      <div class="row">
@@ -163,8 +165,8 @@
 		          <label for="vision">Vision</label>
 		        </div>
 		        <div class="input-field col s4">
-		          <input name="whychooseus" id="whychooseus" type="text" class="validate">
-		          <label for="whychooseus">Why Choose Us</label>
+		          <input name="whyChooseUse" id="whyChooseUse" type="text" class="validate">
+		          <label for="whyChooseUse">Why Choose Us</label>
 		        </div>
 		      </div>
 		      <div class="row">
@@ -181,7 +183,7 @@
 		      </div>
 		      <div class="row">
 		        <div class="input-field col s6">
-				  <select class="browser-default numeroServicio">
+				  <select class="browser-default numeroServicio" name="cantidadServicios">
 				    <option value="" disabled selected>Cuantos servicios hay?</option>
 				    <option value="1">1</option>
 				    <option value="2">2</option>
@@ -200,8 +202,79 @@
 				  <div class="input-field col s8" id="mostrarTextoServicios">
 				  </div>
 		      </div>
+		      <div class="row">
+		        <div class="input-field col s4">
+		          <input name="color1" id="color1" type="text" class="validate">
+		          <label for="color1">Color 1</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="color2" id="color2" type="text" class="validate">
+		          <label for="color2">Color 2</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="color3" id="color3" type="text" class="validate">
+		          <label for="color3">Color 3</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s4">
+		          <input name="facebook" id="facebook" type="text" class="validate">
+		          <label for="facebook">Facebook</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="twitter" id="twitter" type="text" class="validate">
+		          <label for="twitter">Twitter</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="gplus" id="gplus" type="text" class="validate">
+		          <label for="gplus">Google Plus</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s4">
+		          <input name="bbb" id="bbb" type="text" class="validate">
+		          <label for="bbb">BBB</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="homeAdvisor" id="homeAdvisor" type="text" class="validate">
+		          <label for="homeAdvisor">Home Advisor</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="manta" id="manta" type="text" class="validate">
+		          <label for="manta">Manta</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s4">
+		          <input name="yelp" id="yelp" type="text" class="validate">
+		          <label for="yelp">Yelp</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="buildZooom" id="buildZooom" type="text" class="validate">
+		          <label for="buildZooom">Build Zoom</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="houzz" id="houzz" type="text" class="validate">
+		          <label for="houzz">Houzz</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s4">
+		          <input name="yellowPages" id="yellowPages" type="text" class="validate">
+		          <label for="yellowPages">Yellow Pages</label>
+		        </div>
+		        <div class="input-field col s4">
+		          <input name="youtube" id="youtube" type="text" class="validate">
+		          <label for="youtube">Youtube Chanel</label>
+		        </div>
+		        <div class="input-field col s4">
+		        <textarea id="googleMap" name="googleMap" class="materialize-textarea"></textarea>
+		          <label for="googleMap">Google Map</label>
+		        </div>
+		      </div>
+		      <!-- OPCIONES QUE CORRESPONDEN A YASSER -->
 			  <div class="row">
-			      <div class="file-field input-field">
+			      <div class="file-field input-field col s4">
 				      <div class="btn">
 				        <span>Upload Logo</span>
 				        <input type="file">
@@ -209,7 +282,27 @@
 				      <div class="file-path-wrapper">
 				        <input class="file-path validate" type="text">
 				      </div>
+			  	 </div>
+			      <div class="file-field input-field col s4">
+				      <div class="btn">
+				        <span>Upload Logo footer</span>
+				        <input type="file">
+				      </div>
+				      <div class="file-path-wrapper">
+				        <input class="file-path validate" type="text">
+				      </div>
+			  	 </div>
+			      <div class="file-field input-field col s4">
+				      <div class="btn">
+				        <span>Favicon</span>
+				        <input type="file">
+				      </div>
+				      <div class="file-path-wrapper">
+				        <input class="file-path validate" type="text">
+				      </div>
+			  	 </div>
 			  </div>
+			  <!-- END OPCIONES QUE CORRESPONDEN A YASSER -->
 			  <div class="row">
 				<div class="input-field col s12">
 					<input type="submit" value="Crear Pagina" class="waves-effect waves-light btn">

@@ -3,8 +3,7 @@ require_once('function.php');
 //Get Sercer URL
 //$getfull_name = $_SERVER['PHP_SELF'];$name_array = explode('/',$full_name);$count = count($name_array);$page_name = $name_array[$count-1];
 //Template que se va utilizar
-$template = 'stability';
-
+$template = $_POST['template'];
 //Funcion para crear la carpeta del website creado, comprimirlo en un zip, descargalo, y eliminar el directorio temporal y el zip
 function write_info($template){
 	//si no se selecciono un tema indicar que la variable esta vacia
@@ -34,7 +33,8 @@ function write_info($template){
 		recurse_copy($src,$dst);// listo, se ha creado una copia de los archivos que se utilizaran
 
 		// escribiremos sobre el archivo text.php
-		$dirTemplate = 'download/'.$template.'/php/text.php';
+		$dirTemplate = 'download/'.$template.'/php/text.php';// varible constante
+		$getFileName = isset($_POST['fileName']) ? $_POST['fileName'] : 'tupaginaweb';
 		//obtenemos las varibles que se necesitan
 		$getCompany= isset($_POST['nameCompany']) ? $_POST['nameCompany'] : 'Nombre de la Comania';
 		$getDomain= isset($_POST['domain']) ? $_POST['domain'] : 'http://www.example.com/';
@@ -68,7 +68,6 @@ function write_info($template){
 		$getyelp= isset($_POST['yelp']) ? $_POST['yelp'] : '';
 		$getbuildzoom= isset($_POST['buildZooom']) ? $_POST['buildZooom'] : '';
 		$gethouzz= isset($_POST['houzz']) ? $_POST['houzz'] : '';
-		$getyelp= isset($_POST['yelp']) ? $_POST['yelp'] : '';
 		$getyellowpages= isset($_POST['yellowPages']) ? $_POST['yellowPages'] : '';
 		$getGoogleMap= isset($_POST['googleMap']) ? $_POST['googleMap'] : '';
 		$getYouTube= isset($_POST['youtube']) ? $_POST['youtube'] : '';
@@ -83,6 +82,7 @@ function write_info($template){
 		$getWhy = isset($_POST['whyChooseUse']) ? $_POST['whyChooseUse'] : '';
 		$getMission = isset($_POST['mission']) ? $_POST['mission'] : '';
 		$getVision = isset($_POST['vision']) ? $_POST['vision'] : '';
+		$getCantidadServicios = isset($_POST['cantidadServicios']) ? $_POST['cantidadServicios'] : '';
 		$getColor1 = isset($_POST['color1']) ? $_POST['color1'] : '';
 		$getColor2 = isset($_POST['color2']) ? $_POST['color2'] : '';
 		$getColor3 = isset($_POST['color3']) ? $_POST['color3'] : '';
