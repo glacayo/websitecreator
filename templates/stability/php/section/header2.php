@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php $full_name = $_SERVER['PHP_SELF'];$name_array = explode('/',$full_name);$count = count($name_array);$page_name = $name_array[$count-1];?>
 <?php include 'php/text.php' ?>
 <html lang="en" <?php if($page_name!='blog.php'){echo "itemscope itemtype='http://schema.org/WebSite'";}?>>
 <?php include 'setting.php' ?>

@@ -4,7 +4,6 @@ require_once('function.php');
 //$getfull_name = $_SERVER['PHP_SELF'];$name_array = explode('/',$full_name);$count = count($name_array);$page_name = $name_array[$count-1];
 //Template que se va utilizar
 $template = $_POST['template'];
-	
 
 //Funcion para crear la carpeta del website creado, comprimirlo en un zip, descargalo, y eliminar el directorio temporal y el zip
 function write_info($template){
@@ -12,6 +11,8 @@ function write_info($template){
 	if (empty($template)) {
 		echo "Seleccionar un template";
 	}else{
+
+		$getFileName = isset($_POST['fileName']) ? $_POST['fileName'] : 'tupaginaweb';
 		//preparando los archivos del template que se utilizaran
 		$src = 'templates/'.$template.'/'; // template que se selecciono
 		$dst = 'download/'.$template.'/'; // destino donde se copiara en todo caso sera la carpeta dowload
@@ -24,19 +25,20 @@ function write_info($template){
 		        if (( $file != '.' ) && ( $file != '..' )) { 
 		            if ( is_dir($src . '/' . $file) ) { 
 		                recurse_copy($src . '/' . $file,$dst . '/' . $file); 
-		            } 
-		            else { 
+		            }
+		            else {
 		                copy($src . '/' . $file,$dst . '/' . $file); 
-		            } 
-		        } 
-		    } 
+		            }
+		        }
+		    }
 		    closedir($dir); 
 		}
 		recurse_copy($src,$dst);// listo, se ha creado una copia de los archivos que se utilizaran
+		rename ("download/$template", "download/$getFileName");//Renombrando la carpeta
+		$dst = 'download/'.$getFileName.'/';
 
 		// escribiremos sobre el archivo text.php
-		$dirTemplate = 'download/'.$template.'/php/text.php';// varible constante
-		$getFileName = isset($_POST['fileName']) ? $_POST['fileName'] : 'tupaginaweb';
+		$dirTemplate = 'download/'.$getFileName.'/php/text.php';// varible constante
 		//obtenemos las varibles que se necesitan
 		$getCompany= isset($_POST['nameCompany']) ? $_POST['nameCompany'] : 'Nombre de la Comania';
 		$getDomain= isset($_POST['domain']) ? $_POST['domain'] : 'http://www.example.com/';
@@ -84,13 +86,13 @@ function write_info($template){
 		$getWhy = isset($_POST['whyChooseUse']) ? $_POST['whyChooseUse'] : '';
 		$getMission = isset($_POST['mission']) ? $_POST['mission'] : '';
 		$getVision = isset($_POST['vision']) ? $_POST['vision'] : '';
-		$getCantidadServicios = isset($_POST['cantidadServicios']) ? $_POST['cantidadServicios'] : '';
+
 		$getColor1 = isset($_POST['color1']) ? $_POST['color1'] : '';
 		$getColor2 = isset($_POST['color2']) ? $_POST['color2'] : '';
 		$getColor3 = isset($_POST['color3']) ? $_POST['color3'] : '';
 
 		/**** Inicio de la Funcion de los Logos y Favicon ****/
-			$ruta="download/$template/img/"; //Carpeta en la que subiremos los Logos
+			$ruta="download/$getFileName/img/"; //Carpeta en la que subiremos los Logos
 			$logo_footer="logo-upload";
 			$logo_footer="logo-footer-upload";
 			$logo_footer="favicon-upload";
@@ -105,24 +107,24 @@ function write_info($template){
 			$nombrelogo="favicon";
 			if (is_uploaded_file($uploadfile_temporal))
 			{ 
-				if($template=="stability"){move_uploaded_file($uploadfile_temporal, 'download/'.$template.'/images/logo.png');}/*
-				elseif($template=="dart"){move_uploaded_file($uploadfile_temporal, 'download/'.$template.'/images/logo.png');}
-				elseif($template=="prikitiw"){move_uploaded_file($uploadfile_temporal, 'download/'.$template.'/img/logo.png');}
-				elseif($template=="solarise"){move_uploaded_file($uploadfile_temporal, 'download/'.$template.'/img/logo.png');}*/
+				if($getFileName=="stability"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/images/logo.png');}/*
+				elseif($getFileName=="dart"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/images/logo.png');}
+				elseif($getFileName=="prikitiw"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/img/logo.png');}
+				elseif($getFileName=="solarise"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/img/logo.png');}*/
 				
 				if (is_uploaded_file($uploadfooter_temporal))
 					{ 
-						if($template=="stability"){move_uploaded_file($uploadfooter_temporal, 'download/'.$template.'/images/logo-footer.png');}/*
-						elseif($template=="dart"){move_uploaded_file($uploadfooter_temporal, 'download/'.$template.'/images/logo-footer.png');}
-						elseif($template=="prikitiw"){move_uploaded_file($uploadfooter_temporal, 'download/'.$template.'/img/logo-footer.png');}
-						elseif($template=="solarise"){move_uploaded_file($uploadfooter_temporal, 'download/'.$template.'/img/logo-footer.png');}*/
+						if($getFileName=="stability"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/images/logo-footer.png');}/*
+						elseif($getFileName=="dart"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/images/logo-footer.png');}
+						elseif($getFileName=="prikitiw"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/img/logo-footer.png');}
+						elseif($getFileName=="solarise"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/img/logo-footer.png');}*/
 
 						if (is_uploaded_file($uploadfavicon_temporal))
 							{ 
-								if($template=="stability"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$template.'/images/favicon.png');}/*
-								elseif($template=="dart"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$template.'/images/favicon.png');}
-								elseif($template=="prikitiw"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$template.'/img/favicon.png');}
-								elseif($template=="solarise"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$template.'/img/favicon.png');}*/
+								if($getFileName=="stability"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/images/favicon.png');}/*
+								elseif($getFileName=="dart"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/images/favicon.png');}
+								elseif($getFileName=="prikitiw"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/img/favicon.png');}
+								elseif($getFileName=="solarise"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/img/favicon.png');}*/
 							}
 					}
 			}
@@ -225,7 +227,19 @@ function write_info($template){
 		\$Color1 = $varPHPColor1;
 		\$Color2 = $varPHPColor2;
 		\$Color3 = $varPHPColor3;
-		?>";
+		";
+
+
+		$getCantidadServicios = isset($_POST['cantidadServicios']) ? $_POST['cantidadServicios'] : '';
+		if ( $getCantidadServicios > 0 ) {
+			for ($i=1; $i <= $getCantidadServicios ; $i++) { 
+				$getNameServices[$i] = var_export( $_POST["nameServices-$i"], true );
+				$getServices[$i] =  var_export( $_POST["services-$i"], true );
+				$var .= "\$NS[$i] = $getNameServices[$i];\n";
+				$var .= "\$DS[$i] = $getServices[$i];\n";
+			}
+			$var .= "?>";
+		}
 		file_put_contents($dirTemplate, $var);// se ha escrito toda la informacion que se necesita en el archivo text
 
 		//Funcion para comprimir los archivos en un ZIP
@@ -258,18 +272,18 @@ function write_info($template){
 
 			 return true; /* Retorno satisfactorio */
 		}
-		if(comprimir($dst, "$template.zip")){
+		if(comprimir($dst, "$getFileName.zip")){
 		 echo 'Ok';
 		}else{
 		 echo 'Error al comprimir el archivo';
 		}
 		//Para forzar su descarga creamos las cabeceras necesarias indicando que es un archivo de tipo zip y especificando su nombre.
 		 header("Content-type: application/octet-stream");
-		 header("Content-disposition: attachment; filename=$template.zip");
+		 header("Content-disposition: attachment; filename=$getFileName.zip");
 		 // leemos el archivo creado
-		 readfile("$template.zip");
+		 readfile("$getFileName.zip");
 		 // Por último eliminamos el archivo temporal creado
-		 unlink("$template.zip");//Destruye archivo temporal
+		 unlink("$getFileName.zip");//Destruye archivo temporal
 		 //como ultimo paso eliminamos el directorio que hemos creado anteriormente
 		 function delTree($dst) { 
 		   $files = array_diff(scandir($dst), array('.','..')); 
