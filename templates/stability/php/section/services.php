@@ -8,45 +8,23 @@
 		</div>
 	</div>
 	<div class="row">
+		<?php $i=1; ?>
+		<?php do { ?>
 		<div class="col-md-4 bright" itemscope itemtype="http://schema.org/Service">
-			<meta itemprop="serviceType" content="<?php echo $SN1;?>"/>
+			<meta itemprop="serviceType" content="<?php echo $SN[$i];?>"/>
 			<div class="icon-box centered circled boxed icon-box-animated" data-animation="fadeInUp">
 				<div class="icon">
-					<img src="images/services/1.jpg" alt="<?php echo "$SN1";?>" class="img-responsive img-circle"/>
+					<img src="images/services/<?php echo $i;?>.jpg" alt="<?php echo $SN[$i];?>" class="img-responsive img-circle"/>
 				</div>
 				<div class="icon-box-body">
-					<h3><?php echo "$SN1";?></h3>
-					<p><?php echo "$ExSD1";?></p>
+					<h3><?php echo $SN[$i];?></h3>
+					<p><?php echo substr($SD[$i], 0, 180);?></p>
 					<a href="services.php" title="Read More" class="btn btn-default b_red-6 b_red-5-hover t_white"><i class="fa fa-wrench"></i> Read More</a>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4 bright" itemscope itemtype="http://schema.org/Service">
-			<meta itemprop="serviceType" content="<?php echo $SN2;?>"/>
-			<div class="icon-box centered circled boxed icon-box-animated" data-animation="fadeInUp" data-animation-delay="200">
-				<div class="icon">
-					<img src="images/services/2.jpg" alt="<?php echo "$SN2";?>" class="img-responsive img-circle"/>
-				</div>
-				<div class="icon-box-body">
-					<h3><?php echo "$SN2";?></h3>
-					<p><?php echo "$ExSD2";?></p>
-					<a href="services.php" title="Read More" class="btn btn-default b_red-6 b_red-5-hover t_white"><i class="fa fa-wrench"></i> Read More</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 bright" itemscope itemtype="http://schema.org/Service">
-			<meta itemprop="serviceType" content="<?php echo $SN3;?>"/>
-			<div class="icon-box centered circled boxed icon-box-animated" data-animation="fadeInUp" data-animation-delay="400">
-				<div class="icon">
-					<img src="images/services/3.jpg" alt="<?php echo "$SN3";?>" class="img-responsive img-circle"/>
-				</div>
-				<div class="icon-box-body">
-					<h3><?php echo "$SN3";?></h3>
-					<p><?php echo "$ExSD3";?></p>
-					<a href="services.php" title="Read More" class="btn btn-default b_red-6 b_red-5-hover t_white"><i class="fa fa-wrench"></i> Read More</a>
-				</div>
-			</div>
-		</div>
+		<?php $i++; ?>
+		<?php } while ( $i <= 4 ); ?>
 	</div>
 	<p>&nbsp;</p>
 	<div class="row">

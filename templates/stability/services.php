@@ -13,45 +13,21 @@
 		<div itemprop="text">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
+					<?php for ($i=1; $i <= $CantidadServicios ; $i++) { ?>
 					<div class="row bright">
 						<div class="col-md-4" data-animation="fadeInLeft" itemscope itemtype="http://schema.org/Service">
-							<meta itemprop="serviceType" content="<?php echo $SN1;?>"/>
-							<img src="images/services/1.jpg" itemprop="image" alt="<?php echo "$SN1";?>" class="img-responsive img-thumbnail"/> <br><br>
+							<meta itemprop="serviceType" content="<?php echo $SN[$i];?>"/>
+							<img src="images/services/<?php echo $i;?>.jpg" itemprop="image" alt="<?php echo $SN[$i];?>" class="img-responsive img-thumbnail"/> <br><br>
 						</div>
 						<div class="col-md-8" data-animation="fadeInRight">
-							<h2 class="uppercase t_orange-4"><?php echo "$SN1";?></h2><hr>
-							<p><?php echo "$SD1";?></p>
+							<h2 class="uppercase t_orange-4"><?php echo $SN[$i];?></h2><hr>
+							<p><?php echo $SD[$i];?></p>
 						</div>
 					</div>
 					<br>
 					<hr>
 					<br>
-					<div class="row bright">
-						<div class="col-md-4" data-animation="fadeInLeft" itemscope itemtype="http://schema.org/Service">
-							<meta itemprop="serviceType" content="<?php echo $SN2;?>"/>
-							<img src="images/services/2.jpg" alt="<?php echo "$SN2";?>" class="img-responsive img-thumbnail"> <br><br>
-						</div>
-						<div class="col-md-8" data-animation="fadeInRight">
-							<h2 class="uppercase t_orange-4"><?php echo "$SN2";?></h2><hr>
-							<p><?php echo "$SD2";?></p>
-						</div>
-					</div>
-					<br>
-					<hr>
-					<br>
-					<div class="row bright">
-						<div class="col-md-4" data-animation="fadeInLeft" itemscope itemtype="http://schema.org/Service">
-							<meta itemprop="serviceType" content="<?php echo $SN3;?>"/>
-							<img src="images/services/3.jpg" alt="<?php echo "$SN3";?>" class="img-responsive img-thumbnail"/> <br><br>
-						</div>
-						<div class="col-md-8" data-animation="fadeInRight">
-							<h2 class="uppercase t_orange-4"><?php echo "$SN3";?></h2><hr>
-							<p><?php echo "$SD3";?></p>
-						</div>
-					</div>
-					<br>
-					<hr>
-					<br>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

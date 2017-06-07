@@ -1,0 +1,1 @@
+document.onkeydown=desabilitar;document.onselectstart=selecionar;document.oncontextmenu=selecionar;function selecionar(){return false;}function desabilitar(){if(event.keyCode){switch(window.event.keyCode){case 123:event.keyCode=0;return false;default:break;}}}

@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="col-md-6 t_black" data-animation="fadeInLeft">
 			<h2 class="t_black">About Us</h2>
-			<div><?php echo "$ExAbout";?></div>
+			<div><?php echo substr($About, 0, 546);?></div>
 			<a href="about.php" title="about" class="btn btn-md b_orange-4 t_white"><i class="fa fa-eye"></i> Read More</a>
 			<br><br>
 		</div>

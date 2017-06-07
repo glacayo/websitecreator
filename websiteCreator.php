@@ -63,17 +63,17 @@ function write_info($template){
 		$getBilingual= isset($_POST['bilingual']) ? $_POST['bilingual'] : '';
 		$getEstimates= isset($_POST['estimates']) ? $_POST['estimates'] : '';
 		$getCover= isset($_POST['coverArea']) ? $_POST['coverArea'] : '';
-		$getfacebook= isset($_POST['facebook']) ? $_POST['facebook'] : '';
-		$gettwitter= isset($_POST['twitter']) ? $_POST['twitter'] : '';
-		$getgoogleplus= isset($_POST['gplus']) ? $_POST['gplus'] : '';
-		$getbbb= isset($_POST['bbb']) ? $_POST['bbb'] : '';
-		$gethomeadvisor= isset($_POST['homeAdvisor']) ? $_POST['homeAdvisor'] : '';
-		$getmanta= isset($_POST['manta']) ? $_POST['manta'] : '';
-		$getyelp= isset($_POST['yelp']) ? $_POST['yelp'] : '';
-		$getbuildzoom= isset($_POST['buildZooom']) ? $_POST['buildZooom'] : '';
-		$gethouzz= isset($_POST['houzz']) ? $_POST['houzz'] : '';
-		$getyellowpages= isset($_POST['yellowPages']) ? $_POST['yellowPages'] : '';
-		$getGoogleMap= isset($_POST['googleMap']) ? $_POST['googleMap'] : '';
+		$getfacebook= isset($_POST['facebook']) ? $_POST['facebook'] : '#';
+		$gettwitter= isset($_POST['twitter']) ? $_POST['twitter'] : '#';
+		$getgoogleplus= isset($_POST['gplus']) ? $_POST['gplus'] : '#';
+		$getbbb= isset($_POST['bbb']) ? $_POST['bbb'] : '#';
+		$gethomeadvisor= isset($_POST['homeAdvisor']) ? $_POST['homeAdvisor'] : '#';
+		$getmanta= isset($_POST['manta']) ? $_POST['manta'] : '#';
+		$getyelp= isset($_POST['yelp']) ? $_POST['yelp'] : '#';
+		$getbuildzoom= isset($_POST['buildZooom']) ? $_POST['buildZooom'] : '#';
+		$gethouzz= isset($_POST['houzz']) ? $_POST['houzz'] : '#';
+		$getyellowpages= isset($_POST['yellowPages']) ? $_POST['yellowPages'] : '#';
+		$getGoogleMap= isset($_POST['googleMap']) ? $_POST['googleMap'] : '#';
 		$getYouTube= isset($_POST['youtube']) ? $_POST['youtube'] : '';
 		$getPhrase1= isset($_POST['phrase1']) ? $_POST['phrase1'] : '';
 		$getPhrase2= isset($_POST['phrase2']) ? $_POST['phrase2'] : '';
@@ -232,11 +232,13 @@ function write_info($template){
 
 		$getCantidadServicios = isset($_POST['cantidadServicios']) ? $_POST['cantidadServicios'] : '';
 		if ( $getCantidadServicios > 0 ) {
+			$varPHPCantidadServicios = var_export($getCantidadServicios, true);
+			$var .= "\$CantidadServicios = $varPHPCantidadServicios;\n";
 			for ($i=1; $i <= $getCantidadServicios ; $i++) { 
 				$getNameServices[$i] = var_export( $_POST["nameServices-$i"], true );
 				$getServices[$i] =  var_export( $_POST["services-$i"], true );
-				$var .= "\$NS[$i] = $getNameServices[$i];\n";
-				$var .= "\$DS[$i] = $getServices[$i];\n";
+				$var .= "\$SN[$i] = $getNameServices[$i];\n";
+				$var .= "\$SD[$i] = $getServices[$i];\n";
 			}
 			$var .= "?>";
 		}
