@@ -113,7 +113,7 @@ function ImagenesBanner($CategoriaElements, $dst, $template)
 {
 	global $urls_themes;
 	$ImagesForCopy = array();
-	$rutaIamges = 'images/elements/'.$template . '/' . sluggify($CategoriaElements).'/';
+	$rutaIamges = 'images/elements/'. sluggify($CategoriaElements).'/';
 	$total_imagenes = count(glob($rutaIamges.'{*.jpg}',GLOB_BRACE));
 	$numero_imges = rand(1, $total_imagenes);
 	$ImagesForCopy = $rutaIamges . $numero_imges . '.jpg';
