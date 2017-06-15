@@ -27,7 +27,7 @@ function write_info($template){
 		                recurse_copy($src . '/' . $file,$dst . '/' . $file); 
 		            }
 		            else {
-		                copy($src . '/' . $file,$dst . '/' . $file); 
+		                copy($src . '/' . $file,$dst . '/' . $file);
 		            }
 		        }
 		    }
@@ -243,6 +243,22 @@ function write_info($template){
 			$var .= "?>";
 		}
 		file_put_contents($dirTemplate, $var);// se ha escrito toda la informacion que se necesita en el archivo text
+
+
+		// Codigo Nelson para Agregar Imagenes
+		//Portfolio
+		$CategoriasPortfolio = array();
+		if(isset($_POST['landscaping'])){$CategoriasPortfolio[]='landscaping';}
+		if(isset($_POST['airconditioning'])){$CategoriasPortfolio[]='airconditioning';}
+		if(isset($_POST['kitchen-remodeling'])){$CategoriasPortfolio[]='kitchen-remodeling';}
+		if(isset($_POST['bathroom-remodeling'])){$CategoriasPortfolio[]='bathroom-remodeling';}
+		if(isset($_POST['roofing'])){$CategoriasPortfolio[]='roofing';}
+		ImagenesPortfolio($CategoriasPortfolio,$dst, $template);
+		$category_slider = $_POST['radioGroup'];
+		ImagenesSlider($category_slider,$dst, $template);
+		$category_elements = $_POST['radioGroup'];
+		ImagenesElements($category_elements,$dst, $template);
+		ImagenesBanner($category_elements,$dst, $template);
 
 		//Funcion para comprimir los archivos en un ZIP
 		function comprimir($dst, $zip_salida, $handle = false, $recursivo = false){

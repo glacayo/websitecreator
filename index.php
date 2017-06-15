@@ -44,8 +44,16 @@
 				      <label for="landscaping">Landscaping</label>
 				    </p>
 				    <p>
-				      <input type="checkbox" name="painting" id="painting" />
-				      <label for="painting">Painting</label>
+				      <input type="checkbox" name="airconditioning" id="airconditioning" />
+				      <label for="airconditioning">Airconditioning</label>
+				    </p>
+				    <p>
+				      <input type="checkbox" name="kitchen-remodeling" id="kitchen-remodeling" />
+				      <label for="kitchen-remodeling">Kitchen Remodeling</label>
+				    </p>
+				    <p>
+				      <input type="checkbox" name="bathroom-remodeling" id="bathroom-remodeling" />
+				      <label for="bathroom-remodeling">Bathroom Remodeling</label>
 				    </p>
 				    <p>
 				      <input type="checkbox" name="roofing" id="roofing" />
@@ -55,15 +63,23 @@
 		        <div class="input-field col s6">
 		        	<h6>Tipo de imagen principal</h6>
 				    <p>
-				      <input name="radioGroup" type="radio" id="radioLandscaping" />
+				      <input name="radioGroup" type="radio" id="radioLandscaping" value="landscaping" />
 				      <label for="radioLandscaping">Landscaping</label>
 				    </p>
 				    <p>
-				      <input name="radioGroup" type="radio" id="radioPainting" />
-				      <label for="radioPainting">Painiting</label>
+				      <input name="radioGroup" type="radio" id="radioAirconditioning" value="airconditioning" />
+				      <label for="radioAirconditioning">Airconditioning</label>
 				    </p>
 				    <p>
-				      <input name="radioGroup" type="radio" id="radioRoofing" />
+				      <input name="radioGroup" type="radio" id="radioKitchenRemodeling" value="kitchen-remodeling" />
+				      <label for="radioKitchenRemodeling">Kitchen Remodeling</label>
+				    </p>
+				    <p>
+				      <input name="radioGroup" type="radio" id="radioBathroomRemodeling" value="bathroom-remodeling" />
+				      <label for="radioBathroomRemodeling">Bathroom Remodeling</label>
+				    </p>
+				    <p>
+				      <input name="radioGroup" type="radio" id="radioRoofing" value="roofing" />
 				      <label for="radioRoofing">Roofing</label>
 				    </p>
 				    <!-- END OPCIONES QUE LE CORRESPONDEN HA NELSON -->
