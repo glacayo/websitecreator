@@ -1,5 +1,11 @@
 ## Website Creator ##
 [![License](http://misextras.000webhostapp.com/license-apache.svg)](https://github.com/glacayo/websitecreator)
+
+### Nota:###
+Ejecutar los siguientes comandos para evitar que el proyecto lleve archivos basura Thumbs.db<br>
+
+    find . -type f -name "Thumbs.db" -exec rm -f {} \;
+
 ### Estructura de la carpeta image ###
 .<br>
 |-- download ( almacenamiento temporal de las website creadas )<br>
