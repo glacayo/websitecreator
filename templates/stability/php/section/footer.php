@@ -20,24 +20,38 @@
 													<?php echo "$Cover";?>
 												</span>
 											</li>
+											<?php if(!empty($Phone)){ ?>
 											<li>
 												<i class="fa fa-phone"></i>
 												<div class="info-item">
-													<a href="<?php echo "$PhoneRef";?>" title="<?php echo "$Phone";?>"><?php echo "$Phone";?></a>
+													<a href="tel:<?php echo "$Phone";?>" title="<?php echo "$Phone";?>"><?php echo "$Phone";?></a>
 												</div>
 											</li>
+											<?php } ?>
+											<?php if(!empty($Phone2)){ ?>
+											<li>
+												<i class="fa fa-phone"></i>
+												<div class="info-item">
+													<a href="tel:<?php echo "$Phone2";?>" title="<?php echo "$Phone2";?>"><?php echo "$Phone";?></a>
+												</div>
+											</li>
+											<?php } ?>
+											<?php if(!empty($Mail)){ ?>
 											<li>
 												<i class="fa fa-envelope"></i>
 												<span class="info-item">
-													<a href="<?php echo "$MailRef";?>" title="<?php echo "$Mail";?>"><?php echo "$Mail";?></a>
+													<a href="mailto:<?php echo "$Mail";?>" title="<?php echo "$Mail";?>"><?php echo "$Mail";?></a>
 												</span>
 											</li>
+											<?php } ?>
+											<?php if(!empty($Mail2)){ ?>
 											<li>
 												<i class="fa fa-envelope"></i>
 												<span class="info-item">
-													<a href="<?php echo "$MailRef2";?>" title="<?php echo "$Mail2";?>"><?php echo "$Mail2";?></a>
+													<a href="mailto:<?php echo "$Mail2";?>" title="<?php echo "$Mail2";?>"><?php echo "$Mail2";?></a>
 												</span>
 											</li>
+											<?php } ?>
 
 										</ul>
 									</div>
@@ -89,9 +103,11 @@
 									<h3 class="widget-title">Our Services</h3><hr>
 									<div class="widget-content">
 										<ul>
-											<li><a href="services.php" title="<?php echo "$SN1";?>"><?php echo "$SN1";?></a></li>
-											<li><a href="services.php" title="<?php echo "$SN2";?>"><?php echo "$SN2";?></a></li>
-											<li><a href="services.php" title="<?php echo "$SN3";?>"><?php echo "$SN3";?></a></li>
+											<?php $i=1; ?>
+											<?php do { ?>
+											<li><a href="services.php" title="<?php echo $SN[$i];?>"><?php echo $SN[$i];?></a></li>
+											<?php $i++; ?>
+											<?php } while ( $i <= 4 ); ?>
 											<li><a href="services.php" title="Read more">Read more...</a></li>
 										</ul>
 									</div>
