@@ -20,7 +20,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12">
-				<h2 class="center">Crear pagina! <small> <br> Creador de paginas[ Beta ]</h2>
+				<h2 class="center">BETA</h2>
 			</div>
 		    <form action="websiteCreator.php" method="POST" class="col s12" enctype="multipart/form-data">
 		      <div class="row">
@@ -32,6 +32,7 @@
 				  <select class="browser-default" name="template">
 				    <option value="" disabled selected>Elige un tema</option>
 				    <option value="stability">Stability</option>
+				    <option value="dart">Dart</option>
 				  </select>
 				  </div>
 		      </div>
@@ -42,6 +43,18 @@
 				    <p>
 				      <input type="checkbox" name="landscaping" id="landscaping" />
 				      <label for="landscaping">Landscaping</label>
+				    </p>
+				    <p>
+				      <input type="checkbox" name="interior-painting" id="interior-painting" />
+				      <label for="interior-painting">Interior painting</label>
+				    </p>
+				    <p>
+				      <input type="checkbox" name="exterior-painting" id="exterior-painting" />
+				      <label for="exterior-painting">Exterior painting</label>
+				    </p>
+				    <p>
+				      <input type="checkbox" name="drywall" id="drywall" />
+				      <label for="drywall">Drywall</label>
 				    </p>
 				    <p>
 				      <input type="checkbox" name="airconditioning" id="airconditioning" />
@@ -65,6 +78,18 @@
 				    <p>
 				      <input name="radioGroup" type="radio" id="radioLandscaping" value="landscaping" />
 				      <label for="radioLandscaping">Landscaping</label>
+				    </p>
+				    <p>
+				      <input type="radio" name="radioGroup" id="radiointerior-painting" value="interior-painting"/>
+				      <label for="radiointerior-painting">Interior painting</label>
+				    </p>
+				    <p>
+				      <input type="radio" name="radioGroup" id="radioexterior-painting" value="exterior-painting"/>
+				      <label for="radioexterior-painting">Exterior painting</label>
+				    </p>
+				    <p>
+				      <input type="radio" name="radioGroup" id="radioDrywall" value="drywall"/>
+				      <label for="radioDrywall">Drywall</label>
 				    </p>
 				    <p>
 				      <input name="radioGroup" type="radio" id="radioAirconditioning" value="airconditioning" />

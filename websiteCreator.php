@@ -107,24 +107,24 @@ function write_info($template){
 			$nombrelogo="favicon";
 			if (is_uploaded_file($uploadfile_temporal))
 			{ 
-				if($getFileName=="stability"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/images/logo.png');}/*
+				if($getFileName=="stability"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/images/logo.png');}
 				elseif($getFileName=="dart"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/images/logo.png');}
 				elseif($getFileName=="prikitiw"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/img/logo.png');}
-				elseif($getFileName=="solarise"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/img/logo.png');}*/
+				elseif($getFileName=="solarise"){move_uploaded_file($uploadfile_temporal, 'download/'.$getFileName.'/img/logo.png');}
 				
 				if (is_uploaded_file($uploadfooter_temporal))
 					{ 
-						if($getFileName=="stability"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/images/logo-footer.png');}/*
+						if($getFileName=="stability"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/images/logo-footer.png');}
 						elseif($getFileName=="dart"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/images/logo-footer.png');}
 						elseif($getFileName=="prikitiw"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/img/logo-footer.png');}
-						elseif($getFileName=="solarise"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/img/logo-footer.png');}*/
+						elseif($getFileName=="solarise"){move_uploaded_file($uploadfooter_temporal, 'download/'.$getFileName.'/img/logo-footer.png');}
 
 						if (is_uploaded_file($uploadfavicon_temporal))
 							{ 
-								if($getFileName=="stability"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/images/favicon.png');}/*
+								if($getFileName=="stability"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/images/favicon.png');}
 								elseif($getFileName=="dart"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/images/favicon.png');}
 								elseif($getFileName=="prikitiw"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/img/favicon.png');}
-								elseif($getFileName=="solarise"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/img/favicon.png');}*/
+								elseif($getFileName=="solarise"){move_uploaded_file($uploadfavicon_temporal, 'download/'.$getFileName.'/img/favicon.png');}
 							}
 					}
 			}
@@ -236,9 +236,9 @@ function write_info($template){
 			$var .= "\$CantidadServicios = $varPHPCantidadServicios;\n";
 			for ($i=1; $i <= $getCantidadServicios ; $i++) { 
 				$getNameServices[$i] = var_export( $_POST["nameServices-$i"], true );
-				$getServices[$i] =  var_export( $_POST["services-$i"], true );
+				$getServicesDescription[$i] =  var_export( $_POST["services-$i"], true );
 				$var .= "\$SN[$i] = $getNameServices[$i];\n";
-				$var .= "\$SD[$i] = $getServices[$i];\n";
+				$var .= "\$SD[$i] = $getServicesDescription[$i];\n";
 			}
 			$var .= "?>";
 		}
@@ -253,6 +253,9 @@ function write_info($template){
 		if(isset($_POST['kitchen-remodeling'])){$CategoriasPortfolio[]='kitchen-remodeling';}
 		if(isset($_POST['bathroom-remodeling'])){$CategoriasPortfolio[]='bathroom-remodeling';}
 		if(isset($_POST['roofing'])){$CategoriasPortfolio[]='roofing';}
+		if(isset($_POST['interior-painting'])){$CategoriasPortfolio[]='interior-painting';}
+		if(isset($_POST['exterior-painting'])){$CategoriasPortfolio[]='exterior-painting';}
+		if(isset($_POST['drywall'])){$CategoriasPortfolio[]='drywall';}
 		ImagenesPortfolio($CategoriasPortfolio,$dst, $template);
 		$category_slider = $_POST['radioGroup'];
 		ImagenesSlider($category_slider,$dst, $template);

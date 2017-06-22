@@ -4,6 +4,7 @@
 $urls_themes = array(
 	'stability' => array('images/slider/','images/portfolio/','images/elements') ,
 	'solarize' => array('images/slider/','images/portfolio/','images/elements') ,
+	'dart' => array('images/slider/','images/portfolio/','images/elements') ,
 	);
 
 
@@ -113,7 +114,7 @@ function ImagenesBanner($CategoriaElements, $dst, $template)
 {
 	global $urls_themes;
 	$ImagesForCopy = array();
-	$rutaIamges = 'images/elements/'. sluggify($CategoriaElements).'/';
+	$rutaIamges = 'images/banner-mobile/'. sluggify($CategoriaElements).'/';
 	$total_imagenes = count(glob($rutaIamges.'{*.jpg}',GLOB_BRACE));
 	$numero_imges = rand(1, $total_imagenes);
 	$ImagesForCopy = $rutaIamges . $numero_imges . '.jpg';
@@ -139,5 +140,4 @@ function sluggify($url)
 
     return $url;
 }
-
 ?>
